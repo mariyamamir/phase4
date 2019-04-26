@@ -1,0 +1,6 @@
+<h1>Editing Flavor</h1>
+
+<%= render 'form', flavor: @flavor %>
+
+<%= button_to "Show", @flavor, :class => "btn btn-primary", :method => :get %> <br>
+<%= button_to "Flavor Home", flavors_path, :class => "btn btn-primary", :method => :get %>

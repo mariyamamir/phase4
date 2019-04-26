@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="col s2">
+  </div>
+  
+  <div id="col s8 center">
+  <%= form_with(model: flavor, local: true) do |form| %>
+  <% if flavor.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(flavor.errors.count, "error") %> prohibited this flavor from being saved:</h2>
+
+      <ul>
+      <% flavor.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <p>
+  <label>
+    <%= form.check_box :active, id:"Active" %>
+    <span><%= form.label :active %></span>
+  </label>
+    </p>
+    </div>
+
+  <div class="actions">
+    <%= button_to "Create Flavor", form.submit, :class => "btn btn-primary", :method => :get %>
+  </div>
+<% end %>
+</div>
+  
+  <div class="col s2">
+  </div>
+</div>

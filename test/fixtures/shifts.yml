@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2019-04-24
+  start_time: 2019-04-24 12:47:09
+  end_time: 2019-04-24 12:47:09
+  notes: MyString
+  assignment: one
+
+two:
+  date: 2019-04-24
+  start_time: 2019-04-24 12:47:09
+  end_time: 2019-04-24 12:47:09
+  notes: MyString
+  assignment: two

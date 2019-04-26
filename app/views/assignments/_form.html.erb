@@ -1,0 +1,55 @@
+<div class="row">
+  <div class="col s2">
+  </div>
+  
+  <div id="col s8 center">
+  <%= form_with(model: assignment, local: true) do |form| %>
+  <% if assignment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(assignment.errors.count, "error") %> prohibited this assignment from being saved:</h2>
+
+      <ul>
+      <% assignment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div class="input-field">
+    <%= form.label :start_date %>
+    <%= form.text_field :start_date, prompt: "Start Date", class: "datepicker", :value =>
+    (form.object.start_date.strftime('%B %d, %Y') if form.object.start_date != nil)%>
+	</div>
+  
+  <div class="input-field">
+    <%= form.label :end_date %>
+    <%= form.text_field :end_date, prompt: "End Date", class: "datepicker", :value =>
+    (form.object.end_date.strftime('%B %d, %Y') if form.object.end_date != nil)%> 
+  </div>
+
+  <div class="field">
+    <%= form.label :pay_level %>
+    <%= form.number_field :pay_level %>
+  </div>
+
+  <div class="field">
+        <%= form.label :store_id %>
+        <%= form.collection_select(:store_id, Store.all, :name, :street, { :prompt => 'Select a Store', :selected => @assignment.store_id }, { class: 'form-control' }) %>
+  </div>
+  
+    
+    <div class="field">
+        <%= form.label :employee_id %>
+        <%= form.collection_select(:employee_id, Employee.all, :first_name, :last_name, { :prompt => 'Select an Employee', :selected => @assignment.employee_id }, { class: 'form-control' }) %>
+    </div>
+
+<div class="actions">
+    <%= button_to "Submit", form.submit, :class => "btn btn-primary", :method => :get %>
+  </div>
+<% end %>
+</div>
+  
+  <div class="col s2">
+  </div>
+</div>

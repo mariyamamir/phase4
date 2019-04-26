@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="col s2">
+  </div>
+  
+  <div id="col s8 center">
+  <%= form_with(model: shift_job, local: true) do |form| %>
+  <% if shift_job.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(shift_job.errors.count, "error") %> prohibited this shift_job from being saved:</h2>
+
+      <ul>
+      <% shift_job.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div class="field">
+        <%= form.label :shift_id %>
+        <%= form.collection_select(:shift_id, Shift.all, :date, :start_time, { :prompt => 'Select a Shift', :selected => @shift_job.shift_id }, { class: 'form-control' }) %>
+  </div>
+  
+  <div class="field">
+        <%= form.label :job_id %>
+        <%= form.collection_select(:job_id, Job.all, :name, :description, { :prompt => 'Select a Job', :selected => @shift_job.job_id }, { class: 'form-control' }) %>
+  </div>
+
+  <div class="actions">
+    <%= button_to "Submit", form.submit, :class => "btn btn-primary", :method => :get %>
+  </div>
+<% end %>
+</div>
+  
+  <div class="col s2">
+  </div>
+</div>

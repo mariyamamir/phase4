@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+<div class="container" style="text-align:center">
+<p>
+  <strong>Date:</strong>
+  <%= @shift.date %>
+</p>
+
+<p>
+  <strong>Start time:</strong>
+  <%= @shift.start_time %>
+</p>
+
+<p>
+  <strong>End time:</strong>
+  <%= @shift.end_time %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @shift.notes %>
+</p>
+
+<p>
+  <strong>Assignment:</strong>
+  <%= @shift.assignment %>
+</p>
+
+</div>
+<%= button_to "Edit", edit_shift_path(@shift), :class => "btn btn-primary", :method => :get %> <br>
+<%= button_to "Shift Home", shifts_path, :class => "btn btn-primary", :method => :get %>

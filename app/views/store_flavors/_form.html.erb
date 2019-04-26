@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="col s2">
+  </div>
+  
+  <div id="col s8 center">
+  <%= form_with(model: store_flavor, local: true) do |form| %>
+  <% if store_flavor.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(store_flavor.errors.count, "error") %> prohibited this store_flavor from being saved:</h2>
+
+      <ul>
+      <% store_flavor.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+        <%= form.label :store_id %>
+        <%= form.collection_select(:store_id, Store.all, :name, :street, { :prompt => 'Select a Store', :selected => @store_flavor.store_id }, { class: 'form-control' }) %>
+  </div>
+  
+  <div class="field">
+        <%= form.label :flavor_id %>
+        <%= form.collection_select(:flavor_id, Flavor.all, :name, :name, { :prompt => 'Select a Flavor', :selected => @store_flavor.flavor_id }, { class: 'form-control' }) %>
+  </div>
+
+  <div class="actions">
+    <%= button_to "Submit", form.submit, :class => "btn btn-primary", :method => :get %>
+  </div>
+<% end %>
+</div>
+
+  <div class="col s2">
+  </div>
+</div>

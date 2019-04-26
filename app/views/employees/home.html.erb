@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+}
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+
+
+   
+      
+      <div class="grid-container">
+  <div class="grid-item"><div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">home</i></h2>
+            <h5 class="center"><%= link_to 'Store', stores_path %></h5>
+          </div></div>
+  <div class="grid-item"><div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">group</i></h2>
+            <h5 class="center"><%= link_to 'Employee', employees_path %></h5>
+          </div></div>
+  <div class="grid-item"><div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">assignment</i></h2>
+            <h5 class="center"><%= link_to 'Assignment', assignments_path %></h5>
+          </div></div>
+  <div class="grid-item"><div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">cloud</i></h2>
+            <h5 class="center"><%= link_to 'Flavor', flavors_path %></h5>
+          </div></div>
+  <div class="grid-item"><div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">list</i></h2>
+            <h5 class="center"><%= link_to 'Shift', shifts_path %></h5>
+          </div></div>
+  <div class="grid-item"><div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">lock</i></h2>
+            <h5 class="center"><%= link_to 'Job', jobs_path %></h5>
+          </div></div>
+  <div class="grid-item"><div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">person</i></h2>
+            <h5 class="center"><%= link_to 'User', users_path %></h5>
+          </div></div>
+  <div class="grid-item"><div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">build</i></h2>
+            <h5 class="center"><%= link_to 'ShiftJob', shift_jobs_path %></h5>
+          </div></div>
+  <div class="grid-item"><div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">inbox</i></h2>
+            <h5 class="center"><%= link_to 'StoreFlavor', store_flavors_path %></h5>
+          </div></div>
+
+  </div>
+  
+ 
+  </body>
+  <div class="container" style="height:200px;">
+  </div>
+</html>

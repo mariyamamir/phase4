@@ -1,0 +1,6 @@
+<h1>Editing Shift Job</h1>
+
+<%= render 'form', shift_job: @shift_job %>
+
+<%= button_to "Show", @shift_job, :class => "btn btn-primary", :method => :get %> <br>
+<%= button_to "ShiftJob Home", shift_jobs_path, :class => "btn btn-primary", :method => :get %>

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+<div class="container" style="text-align:center">
+<p>
+  <strong>Start date:</strong>
+  <%= @assignment.start_date %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @assignment.end_date %>
+</p>
+
+<p>
+  <strong>Pay level:</strong>
+  <%= @assignment.pay_level %>
+</p>
+
+<p>
+  <strong>Store:</strong>
+  <%= @assignment.store_id %>
+</p>
+
+<p>
+  <strong>Employee:</strong>
+  <%= @assignment.employee_id %>
+</p>
+</div>
+<%= button_to "Edit", edit_assignment_path(@assignment), :class => "btn btn-primary", :method => :get %> <br>
+<%= button_to "Assignment Home", assignments_path, :class => "btn btn-primary", :method => :get %>

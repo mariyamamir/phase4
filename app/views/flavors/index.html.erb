@@ -1,0 +1,81 @@
+<p id="notice"><%= notice %></p>
+<h1 class="display-6" style="color:black; text-align:center;">Flavors at A&M Creamery</h1>
+      <hr class="my-4">
+      <br>
+      <br>
+<p>
+  <% if (!@active_flavors.nil?) then %>
+        <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample1" role="button" 
+        style="background-color:#FF6666; width:230px; text-align: center; padding: 3px 24px;display: block; margin: 0 auto; border-radius: 12px;
+        box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19); border-color:#2d2722;" 
+        aria-expanded="false" aria-controls="collapseExample1">
+        Active Flavors
+        </a>
+        <br>
+    </p>
+    <div class="collapse" id="collapseExample1">
+        <div class="card card-body1">
+            <table class="table">
+              <thead style="background-color:#FF6666;color:white;">
+                <tr>
+                  <th scope="col">Name</th>
+                  <th scope="col">Active</th>
+                  <th colspan="3"></th>
+                </tr>
+              </thead>
+              <tbody>
+                  <% 
+                  @active_flavors.each do |flavor| %>
+                  <tr>
+                    <td><%= flavor.name %></td>
+                    <td><%= flavor.active %></td>
+                    <td><%= link_to 'Show', flavor %></td>
+                    <td><%= link_to 'Edit', edit_flavor_path(flavor) %></td>
+                    <td><%= link_to 'Destroy', flavor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                  </tr>
+                  <% end %>
+              </tbody>
+            </table>
+        </div>
+    </div>
+  <%end%>
+<br>
+<% if (!@inactive_flavors.nil?) then %>
+        <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample1" role="button" 
+        style="background-color:#FF6666; width:230px; text-align: center; padding: 3px 24px;display: block; margin: 0 auto; border-radius: 12px;
+        box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19); border-color:#2d2722;" 
+        aria-expanded="false" aria-controls="collapseExample1">
+        Inactive Flavors
+        </a>
+        <br>
+    </p>
+    <div class="collapse" id="collapseExample1">
+        <div class="card card-body1">
+            <table class="table">
+              <thead style="background-color:#FF6666;color:white;">
+                <tr>
+                  <th scope="col">Name</th>
+                  <th scope="col">Active</th>
+                  <th colspan="3"></th>
+                </tr>
+              </thead>
+              <tbody>
+                  <% 
+                  @inactive_flavors.each do |flavor| %>
+                  <tr>
+                    <td><%= flavor.name %></td>
+                    <td><%= flavor.active %></td>
+                    <td><%= link_to 'Show', flavor %></td>
+                    <td><%= link_to 'Edit', edit_flavor_path(flavor) %></td>
+                    <td><%= link_to 'Destroy', flavor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                  </tr>
+                  <% end %>
+              </tbody>
+            </table>
+        </div>
+    </div>
+  <%end%>
+
+<div class="container" style="text-align:center;">
+<%= button_to "New Flavor", new_flavor_path, :class => "btn btn-primary", :method => :get %>
+</div>

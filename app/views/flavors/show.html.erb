@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+<div class="container" style="text-align:center">
+<p>
+  <strong>Name:</strong>
+  <%= @flavor.name %>
+</p>
+
+<p>
+  <strong>Active:</strong>
+  <%= @flavor.active %>
+</p>
+</div>
+<%= button_to "Edit", edit_flavor_path(@flavor), :class => "btn btn-primary", :method => :get %> <br>
+<%= button_to "Back", flavors_path, :class => "btn btn-primary", :method => :get %>

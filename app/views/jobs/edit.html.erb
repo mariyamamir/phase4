@@ -1,0 +1,6 @@
+<h1>Editing Job</h1>
+
+<%= render 'form', job: @job %>
+
+<%= button_to "Show", @job, :class => "btn btn-primary", :method => :get %> <br>
+<%= button_to "Job Home", jobs_path, :class => "btn btn-primary", :method => :get %>

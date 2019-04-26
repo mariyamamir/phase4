@@ -1,0 +1,53 @@
+<div class="row">
+  <div class="col s2">
+  </div>
+  
+  <div id="col s8 center">
+  <%= form_with(model: shift, local: true) do |form| %>
+  <% if shift.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(shift.errors.count, "error") %> prohibited this shift from being saved:</h2>
+
+      <ul>
+      <% shift.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="input-field">
+    <%= form.label :date %>
+    <%= form.text_field :date, prompt: "Date", class: "datepicker", :value =>
+    (form.object.date.strftime('%B %d, %Y') if form.object.date != nil)%> 
+  </div>
+
+  <div class="field">
+    <%= form.label :start_time %>
+    <%= form.text_field :start_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :end_time %>
+    <%= form.text_field :end_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :notes %>
+    <%= form.text_field :notes %>
+  </div>
+  
+  <div class="field">
+        <%= form.label :assignment_id %>
+        <%= form.collection_select(:assignment_id, Assignment.all, :start_date, :end_date, { :prompt => 'Select an Assignment', :selected => @shift.assignment_id }, { class: 'form-control' }) %>
+  </div>
+
+  <div class="actions">
+    <%= button_to "Create Flavor", form.submit, :class => "btn btn-primary", :method => :get %>
+  </div>
+<% end %>
+</div>
+  
+  <div class="col s2">
+  </div>
+</div>

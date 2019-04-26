@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+<div class="container" style="text-align:center">
+<p>
+  <strong>First name:</strong>
+  <%= @employee.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @employee.last_name %>
+</p>
+
+<p>
+  <strong>Ssn:</strong>
+  <%= @employee.ssn %>
+</p>
+
+<p>
+  <strong>Date of birth:</strong>
+  <%= @employee.date_of_birth %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @employee.phone %>
+</p>
+
+<p>
+  <strong>Role:</strong>
+  <%= @employee.role %>
+</p>
+
+<p>
+  <strong>Active:</strong>
+  <%= @employee.active %>
+</p>
+</div>
+
+<%= button_to "Edit", edit_employee_path(@employee), :class => "btn btn-primary", :method => :get %> <br>
+<%= button_to "Back", employees_path, :class => "btn btn-primary", :method => :get %>
