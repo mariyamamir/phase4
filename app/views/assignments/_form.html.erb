@@ -43,7 +43,7 @@
         <%= form.label :employee_id %>
         <%= form.collection_select(:employee_id, Employee.all, :first_name, :last_name, { :prompt => 'Select an Employee', :selected => @assignment.employee_id }, { class: 'form-control' }) %>
     </div>
-
+<br>
 <div class="actions">
     <%= button_to "Submit", form.submit, :class => "btn btn-primary", :method => :get %>
   </div>

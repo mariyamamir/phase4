@@ -2,5 +2,5 @@
 
 <%= render 'form', store: @store %>
 
-<%= link_to 'Show', @store %> |
-<%= link_to 'Stores Home', stores_path %>
+<%= button_to "Show", @store, :class => "btn btn-primary", :method => :get %> <br>
+<%= button_to "Stores Home", stores_path, :class => "btn btn-primary", :method => :get %>

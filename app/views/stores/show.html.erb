@@ -46,5 +46,5 @@
   <%= @store.active %>
 </p>
 </div>
-<%= link_to 'Edit', edit_store_path(@store) %> |
-<%= link_to 'Stores Home', stores_path %>
+<%= button_to "Edit", edit_store_path(@store), :class => "btn btn-primary", :method => :get %> <br>
+<%= button_to "Stores Home", stores_path, :class => "btn btn-primary", :method => :get %>
